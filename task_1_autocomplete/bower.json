@@ -1,0 +1,16 @@
+{
+  "name": "task_1_autocomplete",
+  "version": "0.1",
+  "authors": [
+    "Vitaly Pavlenko <cxielamiko@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
