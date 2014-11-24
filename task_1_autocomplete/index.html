@@ -4,20 +4,28 @@
 
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-repeat-n/dist/angular-repeat-n.js"></script>
 
         <link href="bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet">
 
         <script src="js/app.js"></script>
     </head>
     <body ng-app="travelAutocomplete">
-        <div ng-controller="HotelsAutocomplete">
-            <div class="autocomplete-form">
-                <input type="text" ng-model="query" ng-change="refresh()" placeholder="Hilton">
-            </div>
-            <div class="autocomplete-results" ng-repeat="hotel in hotels">
-                <div class="autocomplete-result">
-                    <span class="autocomplete-name">{{ hotel.name }}</span>
-                    <span class="autocomplete-stars">Звезд: {{ hotel.stars }}</span>
+        <div class="container">
+            <div class="row" ng-controller="HotelsAutocomplete">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>Поиск отелей</h2>
+                    <input type="text" ng-model="query" ng-change="refresh()" placeholder="Например: Hilton" focus-me>
+                    <table class="table">
+                        <tr ng-repeat="hotel in hotels">
+                            <td class="col-md-2">
+                                <span ng-repeat-n="hotel.stars" class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            </td>
+                            <td  class="col-md-10">
+                                {{ hotel.name }}, {{ iso2ToName[hotel.iso2] || hotel.iso2 }}
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
