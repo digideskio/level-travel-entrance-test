@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="js/angular.js"></script>
+        <script src="js/app.js"></script>
+        <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    </head>
+    <body ng-app>
+        <div ng-controller="HotelsAutocomplete">
+            <div class="autocomplete-form">
+                <input type="text" ng-change="refresh()" placeholder="Hilton">
+            </div>
+            <div class="autocomplete-results" ng-repeat="hotel in hotels">
+                <div class="autocomplete-result">
+                    <span class="autocomplete-name">{{ hotel.name }}</span>
+                    <span class="autocomplete-stars">Звезд: {{ hotel.stars }}</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
