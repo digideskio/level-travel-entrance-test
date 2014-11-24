@@ -15,7 +15,7 @@
             <div class="row" ng-controller="HotelsAutocomplete">
                 <div class="col-md-8 col-md-offset-2">
                     <h2>Поиск отелей</h2>
-                    <input type="text" ng-model="query" ng-change="refresh()" placeholder="Например: Hilton" focus-me>
+                    <input type="text" ng-model="query" ng-init="refresh()" ng-change="refresh()" placeholder="Например: Hilton" focus-me>
                     <table class="table">
                         <tr ng-repeat="hotel in hotels">
                             <td class="col-md-2">
